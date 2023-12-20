@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8">
+		
+		  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		
+		<title> LISTAGEM DE CLIENTES</title>
+	</head>
+	
+	<body>
+		
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		
+		<h1"> Lista de Cliente </h1>	
+		<a th:href="@{/cliente/novo"> Adicianar Cliente </a> 
+		<table>
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Telefone</th>
+				<th>CPF</th>
+				<th>Email</th>
+			</tr>
+			<tr th:each="cliente : ${cliente}">
+				<td th:text="${cliente.id}"> </td>
+				<td th:text="${cliente.nome}"> </td> 
+				<td th:text="${cliente.telefone}"> </td>
+				<td th:text="${cliente.cpf}"> </td>
+			</tr>
+			<tr>
+				<a th:href="@{/cliente/editar/{id}(id=${cliente.id})}"> EDITAR </a>
+				<a th:href="@{/cliente/deletar/{id}(id=${cliente.id})}"> DELETAR </a>
+			</tr>
+			
+		</table>
+	</body>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</html>

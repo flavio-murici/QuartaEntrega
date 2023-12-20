@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+	<head>
+		<meta charset="UTF-8">
+		<title> LISTAGEM DE PACOTES</title>
+	</head>
+	
+	<body>
+		
+		<h2> Lista de Pacotes </h2>	
+		
+		<a th:href="@{/pacote/novo}"> Adicionar Pacote</a>
+
+		<table>
+			
+			<tr>
+				<th>ID</th>
+				<th>Nome</th>
+				<th>Descrição</th>
+				<th>Valor</th>
+				<th>Ações</th>
+			</tr>
+			
+			<tr th:each="pacote : ${pacote}">
+				<td th:text="${pacote.id}"> </td>
+				<td th:text="${pacote.nome}"> </td> 
+				<td th:text="${pacote.descricao}"> </td>
+				<td th:text="${pacote.valor}"> </td>
+				<td>
+				<a th:href="@{/pacote/editar/{id}(id=${pacote.id})}"> EDITAR </a>
+				<a th:href="@{/pacote/deletar/{id}(id=${pacote.id})}"> DELETAR </a>
+				</td>
+			</tr>
+			
+		</table>
+	</body>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</html>
